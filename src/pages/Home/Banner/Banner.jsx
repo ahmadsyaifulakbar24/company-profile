@@ -1,4 +1,4 @@
-import {Button, Container, CssBaseline, Grid, makeStyles, Typography } from "@material-ui/core";
+import {Button, Container, Grid, makeStyles, Typography } from "@material-ui/core";
 import React from "react";
 
 
@@ -9,9 +9,6 @@ const useStyles = makeStyles((theme) => ({
     bannerTitle: {
         fontWeight: 900,
         marginBottom: theme.spacing(3),
-    },
-    subTitle: {
-        
     },
     button : {
         marginTop: theme.spacing(5),
@@ -30,7 +27,6 @@ const Banner = () => {
     const classes = useStyles()
     return (
         <div className={classes.root}>
-            <CssBaseline />
             <Container>
                 <Grid 
                     container
@@ -50,7 +46,6 @@ const Banner = () => {
                             SOFTWARE AND DEVELOPMENT
                         </Typography>
                         <Typography
-                            classes={classes.subTitle}
                             variant="subtitle1"
                             color="textSecondary"
                         >
