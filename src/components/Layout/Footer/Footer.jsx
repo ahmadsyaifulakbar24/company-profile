@@ -1,6 +1,7 @@
 import {Box, Button, Container, Grid, Hidden, List, ListItem, makeStyles} from "@material-ui/core";
 import MenuItems from "../MenuItems/MenuItems";
 import React from "react";
+import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -25,6 +26,7 @@ const useStyles = makeStyles((theme) => ({
 }))
 const Footer = () => {
     const classes = useStyles()
+    const history = useHistory()
     const menu =(
         <List 
             className={classes.navLink}
@@ -36,6 +38,7 @@ const Footer = () => {
                     <Button
                         className={classes.button}
                         size="small"
+                        onClick = {() => history.push(item.url)}
                     >
                         {item.name}
                     </Button>
