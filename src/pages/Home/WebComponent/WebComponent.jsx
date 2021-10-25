@@ -96,7 +96,7 @@ const WebComponent = () => {
                 </Container>
             </Box>
 
-                {/* Mobile Component */}
+            {/* Mobile Component */}
             <Box
                 py={7}
             >

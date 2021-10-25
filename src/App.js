@@ -3,6 +3,7 @@ import Layout from './components/Layout/Layout';
 import Home from './pages/Home/Home';
 import './App.css'
 import Contact from './pages/Contact/Contact';
+import About from './pages/About/About';
 
 function App() {
   return (
@@ -12,9 +13,7 @@ function App() {
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/contact" component={Contact}/>
-            <Route exact path="/about">
-                about
-            </Route>
+            <Route exact path="/about" component={About}/>
           </Switch>
         </Layout>
       </Router>
