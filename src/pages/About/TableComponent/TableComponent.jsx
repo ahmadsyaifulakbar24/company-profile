@@ -49,7 +49,6 @@ const TableComponent = () => {
                 <Typography
                     className={classes.title}
                     variant="h4"
-                    align="center"
                     color="primary"
                 >
                     Product List

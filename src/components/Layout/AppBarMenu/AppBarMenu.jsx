@@ -73,11 +73,14 @@ const AppBarMenu = () => {
                     button
                     key={index}
                 >
-                    <ListItemText
-                        className={location.pathname === item.url ? classes.active : null}
+                    <Button
+                         className = {`${classes.button} ${location.pathname === item.url ? classes.active : null}`}
+                         onClick={() => history.push(item.url)}
                     >
-                        {item.name
-                    }</ListItemText>
+                        <ListItemText >
+                            {item.name}
+                        </ListItemText>
+                    </Button>
                 </ListItem>
             ))}
         </List>
@@ -91,8 +94,7 @@ const AppBarMenu = () => {
                         className = {`${classes.button} ${location.pathname === item.url ? classes.active : null}`}
                         onClick={() => history.push(item.url)}
                     >
-                        <ListItemText 
-                        >
+                        <ListItemText>
                             {item.name}
                         </ListItemText>
                     </Button>
