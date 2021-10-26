@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 // Material Ui Core
 import { 
@@ -18,6 +18,7 @@ import SkipPreviousIcon from '@material-ui/icons/SkipPrevious';
 import PlayArrowIcon from '@material-ui/icons/PlayArrow';
 import SkipNextIcon from '@material-ui/icons/SkipNext';
 import IconButton from '@material-ui/core/IconButton';
+import PauseIcon from '@material-ui/icons/Pause';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -64,8 +65,21 @@ const useStyles = makeStyles((theme) => ({
     },
 }))
 const AudioComponent = () => {
+    const [play, setPlay] = useState(false)
+    const [audio, setAudio] = useState(new Audio('/assets/Annas.mp3'))
     const classes = useStyles()
     const theme = useTheme();
+    const handleAudio = () => {
+        if (play) {
+            setPlay(false)
+            audio.pause()
+        } else {
+            setPlay(true)
+            audio.play()
+        }
+
+    }
+
     return (
         <Box className={classes.root}>
             <Container>
@@ -73,13 +87,8 @@ const AudioComponent = () => {
                     className={classes.gridRoot}
                     container
                     alignItems="center"
-                    // justifyContent="space-between"
                 >
-                    <Grid
-                        item
-                        // lg={4}
-                        // xs={12}
-                    >
+                    <Grid item >
                         <Card className={classes.music}>
                             <div className={classes.details}>
                                 <CardContent className={classes.content}>
@@ -94,8 +103,14 @@ const AudioComponent = () => {
                                     <IconButton aria-label="previous">
                                         {theme.direction === 'rtl' ? <SkipNextIcon /> : <SkipPreviousIcon />}
                                     </IconButton>
-                                    <IconButton aria-label="play/pause">
-                                        <PlayArrowIcon className={classes.playIcon} />
+                                    <IconButton 
+                                        aria-label="play/pause"
+                                        onClick={handleAudio}
+                                    >
+                                        {play ? 
+                                            <PauseIcon className={classes.playIcon} /> : 
+                                            <PlayArrowIcon className={classes.playIcon} />
+                                        }
                                     </IconButton>
                                     <IconButton aria-label="next">
                                         {theme.direction === 'rtl' ? <SkipPreviousIcon /> : <SkipNextIcon />}
