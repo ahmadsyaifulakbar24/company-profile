@@ -64,16 +64,16 @@ const WebComponent = () => {
                                     variant="h4"
                                     color="primary"
                                 >
-                                    Easy Build Your Website
+                                    Buat Website anda dengan cepat
                                 </Typography>
                                 <Typography
                                     className={classes.subTitle}
                                     variant="subtitle1"
                                 >
-                                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat, fugit? Consectetur excepturi voluptatibus inventore quasi quos distinctio eius odit facilis quo dolorem saepe,
+                                    Sebutkan satu perusahaan hebat yang tidak punya website, sepertinya Anda akan kesulitan. Terutama di era setelah COVID, di mana semua hal dilakukan secara digital, Anda akan ketinggalan jika tidak dapat ditemukan secara online. Membuat website yang baik begitu penting karena 57% pengguna menyatakan mereka tidak mau merekomendasikan bisnis dengan website yang jelek. Tapi jangan khawatir, jika Anda ingin meluncurkan website yang didesain dengan baik ataupun membuat pengalaman digital baru untuk pelanggan Anda, tim kami Software siap membantu!
                                 </Typography>
                             </Grid>
-                            <Grid
+                            {/* <Grid
                                 item
                                 className={classes.gridContent}
                             >
@@ -90,7 +90,7 @@ const WebComponent = () => {
                                 >
                                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat, fugit? Consectetur excepturi voluptatibus inventore quasi quos distinctio eius odit facilis quo dolorem saepe,
                                 </Typography>
-                            </Grid>
+                            </Grid> */}
                         </Grid>
                     </Grid> 
                 </Container>
@@ -116,16 +116,16 @@ const WebComponent = () => {
                                     variant="h4"
                                     color="primary"
                                 >
-                                    Easy Build Your Mobile Apps
+                                    Buat Aplikasi Mobile Anda
                                 </Typography>
                                 <Typography
                                     className={classes.subTitle}
                                     variant="subtitle1"
                                 >
-                                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat, fugit? Consectetur excepturi voluptatibus inventore quasi quos distinctio eius odit facilis quo dolorem saepe,
+                                    Kami menyediakan jasa pengembangan aplikasi mobile sesuai dengan kebutuhan bisnis Anda. Apa yang membedakan kami dari yang lain adalah desain kami yang cermat, kualitas aplikasi yang baik, dan fungsionalitas yang canggih dari aplikasi mobile Anda. Dengan pengalaman meluncurkan ratusan aplikasi iOS dan Android berkualitas, kami menghadirkan produk digital terbaik yang menyenangkan pengguna dan terintegrasi dengan tujuan bisnis Anda.
                                 </Typography>
                             </Grid>
-                            <Grid
+                            {/* <Grid
                                 item
                                 className={classes.gridContent}
                             >
@@ -142,7 +142,7 @@ const WebComponent = () => {
                                 >
                                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat, fugit? Consectetur excepturi voluptatibus inventore quasi quos distinctio eius odit facilis quo dolorem saepe,
                                 </Typography>
-                            </Grid>
+                            </Grid> */}
                         </Grid>
 
                         <Grid item lg={4} xs={12}>

@@ -10,6 +10,10 @@ const useStyles = makeStyles((theme) => ({
     }
 }))
 
+const scrollUp = () => {
+    window.scrollTo(0, 0)
+}
+
 const FloatButton = () => {
     const classes = useStyles()
     return (
@@ -17,6 +21,7 @@ const FloatButton = () => {
             className={classes.fab} 
             color="primary" 
             aria-label="add"
+            onClick={scrollUp}
         >
             <ArrowDropUpIcon />
         </Fab>

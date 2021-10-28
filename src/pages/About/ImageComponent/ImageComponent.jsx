@@ -49,17 +49,14 @@ const ImageComponent = () => {
                                 variant="h4"
                                 color="primary"
                             >
-                              We Build Apps On Multiple Platforms
+                              Membantu Perkembangan Bisnis Klien Melalui Solusi Digital Yang Inovatif
                             </Typography>
 
                             <Typography
                                 className={classes.subTitle}
                                 variant="subtitle1"
                             >
-                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat, fugit? Consectetur excepturi voluptatibus inventore quasi quos distinctio eius odit facilis quo dolorem saepe,
-                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat, fugit? Consectetur excepturi voluptatibus inventore quasi quos distinctio eius odit facilis quo dolorem saepe,
-                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat, fugit? Consectetur excepturi voluptatibus inventore quasi quos distinctio eius odit facilis quo dolorem saepe,
-                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat, fugit? Consectetur excepturi voluptatibus inventore quasi quos distinctio eius odit facilis quo dolorem saepe,
+                                Sesuai dengan visi kami, kami selalu berusaha untuk mengembangkan aplikasi web dan mobile inovatif yang disukai pengguna dan dapat memajukan bisnis klien. Dengan lebih dari 10 tahun pengalaman dalam bidang pengembangan aplikasi, kami menyediakan servis komprehensif untuk produk digital Anda:
                             </Typography>
                         </Grid>
 

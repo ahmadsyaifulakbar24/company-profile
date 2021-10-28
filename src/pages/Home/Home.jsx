@@ -2,7 +2,6 @@ import { CssBaseline } from "@material-ui/core";
 import React, { Component, Fragment } from "react";
 import Banner from "./Banner/Banner";
 import WebComponent from "./WebComponent/WebComponent";
-import FloatButton from "./FloatButton/FloatButton";
 class Home extends Component 
 {
 
@@ -12,8 +11,6 @@ class Home extends Component
                 <CssBaseline />
                 <Banner />
                 <WebComponent />
-
-                <FloatButton />
             </Fragment>
         )
     }

@@ -49,7 +49,7 @@ const Banner = () => {
                             variant="subtitle1"
                             color="textSecondary"
                         >
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat, fugit? Consectetur excepturi voluptatibus inventore quasi quos distinctio eius odit facilis quo dolorem saepe, 
+                            Tim ahli kami menyediakan layanan menyeluruh mulai dari mendesain, mengembangkan hingga memelihara produk digital Anda. Pengalaman kami dapat membantu kesuksesan Anda dalam meluncurkan produk digital Anda. Siap untuk bekerja bersama kami?
                         </Typography>
                         <Button
                             className={classes.button}

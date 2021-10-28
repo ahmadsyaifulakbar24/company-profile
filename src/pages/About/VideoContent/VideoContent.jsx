@@ -45,7 +45,7 @@ const VideoContent = () => {
                                 variant="h4"
                                 color="primary"
                             >
-                             Complete Documentation
+                            Kami Adalah Bagian Dari Tim Anda
                             </Typography>
 
                             <Typography

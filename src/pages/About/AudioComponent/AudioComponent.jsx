@@ -66,7 +66,7 @@ const useStyles = makeStyles((theme) => ({
 }))
 const AudioComponent = () => {
     const [play, setPlay] = useState(false)
-    const [audio, setAudio] = useState(new Audio('/assets/Annas.mp3'))
+    const [audio] = useState(new Audio('/assets/music.mp3'))
     const classes = useStyles()
     const theme = useTheme();
     const handleAudio = () => {
@@ -93,10 +93,10 @@ const AudioComponent = () => {
                             <div className={classes.details}>
                                 <CardContent className={classes.content}>
                                     <Typography component="h5" variant="h5">
-                                        Live From Space
+                                        Only You
                                     </Typography>
                                     <Typography variant="subtitle1" color="textSecondary">
-                                        Mac Miller
+                                        ROY KNOX x Derpcat
                                     </Typography>
                                 </CardContent>
                                 <div className={classes.controls}>
@@ -136,17 +136,14 @@ const AudioComponent = () => {
                                 variant="h4"
                                 color="primary"
                             >
-                              We Build Apps On Multiple Platforms
+                              Mari Mulai Bersama Kami!
                             </Typography>
 
                             <Typography
                                 className={classes.subTitle}
                                 variant="subtitle1"
                             >
-                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat, fugit? Consectetur excepturi voluptatibus inventore quasi quos distinctio eius odit facilis quo dolorem saepe,
-                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat, fugit? Consectetur excepturi voluptatibus inventore quasi quos distinctio eius odit facilis quo dolorem saepe,
-                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat, fugit? Consectetur excepturi voluptatibus inventore quasi quos distinctio eius odit facilis quo dolorem saepe,
-                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat, fugit? Consectetur excepturi voluptatibus inventore quasi quos distinctio eius odit facilis quo dolorem saepe,
+                                Kami bangga dapat mengembangkan aplikasi berkualitas yang membantu memajukan bisnis klien. Itulah mengapa kami dipercaya oleh berbagai perusahaan dan startup dalam merealisasikan proyek mereka.
                             </Typography>
                         </Grid>
 

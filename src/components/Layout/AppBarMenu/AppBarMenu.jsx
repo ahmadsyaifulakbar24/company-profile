@@ -46,13 +46,17 @@ const useStyle = makeStyles((theme) => ({
         },
     },
     button: {
-        textTransform: "none"
+        textTransform: "none",
     },
     drawerPaper: {
         width: drawerWidth
     },
     active : {
-        color: "#3f51b5"
+        color: "#3f51b5",
+    },
+    activeBackground: {
+        color: "#fff",
+        background: "#303f9f"
     }
 }))
 
@@ -60,7 +64,8 @@ const AppBarMenu = () => {
     const classes = useStyle()
     const history = useHistory()
     const location = useLocation()
-    const [mobileOpen, setMobileOpen] = useState(false);
+    const [mobileOpen, setMobileOpen] = useState(false)
+    const [appBarBackground, setAppBarBackground] = useState(false)
 
     const handleDrawerToggle = () => {
         setMobileOpen(!mobileOpen);
@@ -91,7 +96,9 @@ const AppBarMenu = () => {
             {MenuItems.map((item, index) => (
                 <ListItem key={index}>
                     <Button
-                        className = {`${classes.button} ${location.pathname === item.url ? classes.active : null}`}
+                        className = {`${classes.button} ${location.pathname === item.url ? appBarBackground ? classes.activeBackground : classes.active : null}`}
+                        color="inherit"
+                        variant={appBarBackground && location.pathname === item.url ? 'contained' : 'text'}
                         onClick={() => history.push(item.url)}
                     >
                         <ListItemText>
@@ -102,13 +109,22 @@ const AppBarMenu = () => {
             ))}
         </List>
     )
+ 
+    const changeBackground = () => {
+        if(window.scrollY >= 80) {
+            setAppBarBackground(true)
+        } else {
+            setAppBarBackground(false)
+        }
+    }
 
+    window.addEventListener('scroll', changeBackground)
     return (
         <div className={classes.root}>
             <AppBar 
                 elevation="0"
-                position="static"
-                color="transparent"
+                position="fixed"
+                color={appBarBackground ? 'primary' : 'transparent'}
             >
                 <CssBaseline />
                 <Container>

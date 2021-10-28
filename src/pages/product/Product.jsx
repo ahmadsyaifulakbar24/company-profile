@@ -4,7 +4,10 @@ import CardProduct from "./CardProduct/CardProduct";
 
 const styles = theme => ({
     root: {
-        marginTop: theme.spacing(7)
+        marginTop: theme.spacing(13),
+        [theme.breakpoints.down('xs')]: {
+            marginTop: theme.spacing(7),
+        }
     },
     title: {
         fontWeight: 500,
