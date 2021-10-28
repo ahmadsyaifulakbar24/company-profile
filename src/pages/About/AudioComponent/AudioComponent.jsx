@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 // Material Ui Core
 import { 
@@ -64,11 +64,39 @@ const useStyles = makeStyles((theme) => ({
         marginTop: theme.spacing(2)
     },
 }))
+
+let musicItems = [
+    {
+        image: '/assets/images/music/music.jpg',
+        title: 'Only You',
+        subTitle: 'ROY KNOX x Derpcat',
+        music: '/assets/music.mp3',
+    }, 
+    {
+        image: '/assets/images/music/music2.jpg',
+        title: 'Freefalling',
+        subTitle: 'Facading',
+        music: '/assets/music2.mp3',
+    }, 
+    {
+        image: '/assets/images/music/music3.jpg',
+        title: 'Where We Started',
+        subTitle: 'Lost Sky',
+        music: '/assets/music3.mp3',
+    } 
+]
 const AudioComponent = () => {
     const [play, setPlay] = useState(false)
-    const [audio] = useState(new Audio('/assets/music.mp3'))
+    const [audiDesc, setAudioDesc] = useState({
+        image: '/assets/images/music/music.jpg',
+        title: 'Only You',
+        subTitle: 'ROY KNOX x Derpcat'
+    })
+    const [audio, setAudio] = useState(new Audio('/assets/music.mp3'))
+    const [musicOrder, setMusicOrder] = useState(0)
     const classes = useStyles()
     const theme = useTheme();
+
     const handleAudio = () => {
         if (play) {
             setPlay(false)
@@ -78,6 +106,42 @@ const AudioComponent = () => {
             audio.play()
         }
 
+    }
+    
+    const setNewAudio = (music) => {
+        setAudioDesc({
+            image: music.image,
+            title: music.title,
+            subTitle: music.subTitle,
+        })
+
+        setAudio(new Audio(music.music))
+        setPlay(false)
+        audio.pause()
+    }
+
+    const nextMusic = () => {
+        let music
+        if(musicOrder + 1 === musicItems.length) {
+            music = musicItems[0]
+            setMusicOrder(0)
+        } else {
+            music = musicItems[musicOrder + 1]
+            setMusicOrder(musicOrder + 1)
+        }
+        setNewAudio(music)
+    }
+
+    const previousMusci = () => {
+        let music
+        if(musicOrder === 0) {
+            music = musicItems[musicItems.length - 1]
+            setMusicOrder(musicItems.length - 1)
+        } else {
+            music = musicItems[musicOrder - 1]
+            setMusicOrder(musicOrder - 1)
+        }
+        setNewAudio(music)
     }
 
     return (
@@ -93,15 +157,21 @@ const AudioComponent = () => {
                             <div className={classes.details}>
                                 <CardContent className={classes.content}>
                                     <Typography component="h5" variant="h5">
-                                        Only You
+                                        {audiDesc.title}
                                     </Typography>
                                     <Typography variant="subtitle1" color="textSecondary">
-                                        ROY KNOX x Derpcat
+                                        {audiDesc.subTitle}
                                     </Typography>
                                 </CardContent>
                                 <div className={classes.controls}>
                                     <IconButton aria-label="previous">
-                                        {theme.direction === 'rtl' ? <SkipNextIcon /> : <SkipPreviousIcon />}
+                                        {
+                                            theme.direction === 'rtl' ? 
+                                            <SkipNextIcon /> : 
+                                            <SkipPreviousIcon 
+                                                onClick={previousMusci}
+                                            />
+                                        }
                                     </IconButton>
                                     <IconButton 
                                         aria-label="play/pause"
@@ -113,13 +183,19 @@ const AudioComponent = () => {
                                         }
                                     </IconButton>
                                     <IconButton aria-label="next">
-                                        {theme.direction === 'rtl' ? <SkipPreviousIcon /> : <SkipNextIcon />}
+                                        {
+                                            theme.direction === 'rtl' ? 
+                                            <SkipPreviousIcon /> : 
+                                            <SkipNextIcon 
+                                                onClick={nextMusic}
+                                            />
+                                        }
                                     </IconButton>
                                 </div>
                             </div>
                             <CardMedia
                                 className={classes.cover}
-                                image="/assets/images/music.jpg"
+                                image={audiDesc.image}
                                 title="Live from space album cover"
                             />
                         </Card>
