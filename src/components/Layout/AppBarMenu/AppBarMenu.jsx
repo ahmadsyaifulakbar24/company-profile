@@ -144,7 +144,7 @@ const AppBarMenu = () => {
                             className={classes.logo}
                             onClick = {() => history.push('/')}
                         >
-                            My Logo
+                            Home Project
                         </Typography>
 
                         <Hidden

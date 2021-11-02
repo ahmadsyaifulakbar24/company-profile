@@ -70,9 +70,9 @@ const VideoContent = () => {
                             height="257"
                             src="https://www.youtube.com/embed/0KEpWHtG10M?list=PL4cUxeGkcC9gjxLvV4VEkZ6H6H4yWuS58" 
                             title="YouTube video player" 
-                            frameborder="0" 
+                            frameBorder="0" 
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                            allowfullscreen
+                            allowFullScreen
                         ></iframe>
                     </Grid>
                 </Grid>
