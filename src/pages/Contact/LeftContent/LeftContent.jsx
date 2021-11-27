@@ -1,5 +1,6 @@
 import { Box, Grid, Typography, makeStyles } from "@material-ui/core";
 import React from "react";
+import { connect } from "react-redux";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -16,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
         height: "auto"
     }
 }))
-const LeftContent = () => {
+const LeftContent = (props) => {
     const classes = useStyles()
 
     return (
@@ -33,7 +34,7 @@ const LeftContent = () => {
                 >
                     <img 
                         className={classes.image}
-                        src="/assets/images/contact.png" 
+                        src={`${props.image_url}contact.png`} 
                         alt="contact" 
                     />
                 </Box>
@@ -42,4 +43,10 @@ const LeftContent = () => {
     )
 }
 
-export default LeftContent
+const mapStatToProps = (state) => {
+    return {
+        image_url: state.image_url
+    }
+}
+
+export default connect(mapStatToProps, null) (LeftContent)

@@ -1,5 +1,6 @@
 import { Box, Container, Grid, makeStyles, Typography } from "@material-ui/core";
 import React from "react";
+import { connect } from "react-redux";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -33,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
     }
 }))
 
-const WebComponent = () => {
+const WebComponent = (props) => {
     const classes = useStyles()
     return (
         <div className={classes.root}>
@@ -52,7 +53,7 @@ const WebComponent = () => {
                         <Grid item lg={4} xs={12}>
                             <img 
                                 className={classes.image}
-                                src="/assets/images/web.png" 
+                                src={`${props.image_url}web.png`} 
                                 alt="" 
                             />
                         </Grid>
@@ -148,7 +149,7 @@ const WebComponent = () => {
                         <Grid item lg={4} xs={12}>
                             <img 
                                 className={classes.image}
-                                src="/assets/images/mobile.png" 
+                                src={`${props.image_url}mobile.png`} 
                                 alt="" 
                             />
                         </Grid>
@@ -159,4 +160,9 @@ const WebComponent = () => {
     )
 }
 
-export default WebComponent
+const mapStatToProps = (state) => {
+    return {
+        image_url: state.image_url
+    }
+}
+export default connect(mapStatToProps, null) (WebComponent)

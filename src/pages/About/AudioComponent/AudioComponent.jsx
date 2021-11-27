@@ -19,6 +19,7 @@ import PlayArrowIcon from '@material-ui/icons/PlayArrow';
 import SkipNextIcon from '@material-ui/icons/SkipNext';
 import IconButton from '@material-ui/core/IconButton';
 import PauseIcon from '@material-ui/icons/Pause';
+import { connect } from "react-redux";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -65,34 +66,34 @@ const useStyles = makeStyles((theme) => ({
     },
 }))
 
-let musicItems = [
-    {
-        image: '/assets/images/music/music.jpg',
-        title: 'Only You',
-        subTitle: 'ROY KNOX x Derpcat',
-        music: '/assets/music.mp3',
-    }, 
-    {
-        image: '/assets/images/music/music2.jpg',
-        title: 'Freefalling',
-        subTitle: 'Facading',
-        music: '/assets/music2.mp3',
-    }, 
-    {
-        image: '/assets/images/music/music3.jpg',
-        title: 'Where We Started',
-        subTitle: 'Lost Sky',
-        music: '/assets/music3.mp3',
-    } 
-]
-const AudioComponent = () => {
+const AudioComponent = (props) => {
+    let musicItems = [
+        {
+            image: props.image_url + 'music/music.jpg',
+            title: 'Only You',
+            subTitle: 'ROY KNOX x Derpcat',
+            music: props.asset_url + 'music.mp3',
+        }, 
+        {
+            image: props.image_url + 'music/music2.jpg',
+            title: 'Freefalling',
+            subTitle: 'Facading',
+            music: props.asset_url + 'music2.mp3',
+        }, 
+        {
+            image: props.image_url + 'music/music3.jpg',
+            title: 'Where We Started',
+            subTitle: 'Lost Sky',
+            music: props.asset_url + 'music3.mp3',
+        } 
+    ]
     const [play, setPlay] = useState(false)
     const [audiDesc, setAudioDesc] = useState({
-        image: '/assets/images/music/music.jpg',
+        image: props.image_url + 'music/music.jpg',
         title: 'Only You',
         subTitle: 'ROY KNOX x Derpcat'
     })
-    const [audio, setAudio] = useState(new Audio('/assets/music.mp3'))
+    const [audio, setAudio] = useState(new Audio(props.asset_url + 'music.mp3'))
     const [musicOrder, setMusicOrder] = useState(0)
     const classes = useStyles()
     const theme = useTheme();
@@ -229,5 +230,10 @@ const AudioComponent = () => {
         </Box>
     )
 }
-
-export default AudioComponent
+const mapStatToProps = (state) => {
+    return {
+        image_url: state.image_url,
+        asset_url: state.asset_url
+    }
+}
+export default  connect(mapStatToProps, null) (AudioComponent)

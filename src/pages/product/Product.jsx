@@ -1,5 +1,6 @@
 import { Box, Container, Grid, Typography, withStyles } from "@material-ui/core";
 import React, { Component } from "react";
+import { connect } from "react-redux";
 import CardProduct from "./CardProduct/CardProduct";
 
 const styles = theme => ({
@@ -18,51 +19,51 @@ class Product extends Component
 {
     productItems = [
         {
-            'image' : '/assets/images/product/product1.jpg',
+            'image' : this.props.image_url + 'product/product1.jpg',
             'title': 'Restourant Web'
         },
         {
-            'image' : '/assets/images/product/product2.jpg',
+            'image' : this.props.image_url + 'product/product2.jpg',
             'title': 'Mobile Apps'
         },
         {
-            'image' : '/assets/images/product/product3.jpg',
+            'image' : this.props.image_url + 'product/product3.jpg',
             'title': 'Restourant'
         },
         {
-            'image' : '/assets/images/product/product1.jpg',
+            'image' : this.props.image_url + 'product/product1.jpg',
             'title': 'Restourant Web'
         },
         {
-            'image' : '/assets/images/product/product2.jpg',
+            'image' : this.props.image_url + 'product/product2.jpg',
             'title': 'Mobile Apps'
         },
         {
-            'image' : '/assets/images/product/product3.jpg',
+            'image' : this.props.image_url + 'product/product3.jpg',
             'title': 'Restourant'
         },
         {
-            'image' : '/assets/images/product/product1.jpg',
+            'image' : this.props.image_url + 'product/product1.jpg',
             'title': 'Restourant Web'
         },
         {
-            'image' : '/assets/images/product/product2.jpg',
+            'image' : this.props.image_url + 'product/product2.jpg',
             'title': 'Mobile Apps'
         },
         {
-            'image' : '/assets/images/product/product3.jpg',
+            'image' : this.props.image_url + 'product/product3.jpg',
             'title': 'Restourant'
         },
         {
-            'image' : '/assets/images/product/product1.jpg',
+            'image' : this.props.image_url + 'product/product1.jpg',
             'title': 'Restourant Web'
         },
         {
-            'image' : '/assets/images/product/product2.jpg',
+            'image' : this.props.image_url + 'product/product2.jpg',
             'title': 'Mobile Apps'
         },
         {
-            'image' : '/assets/images/product/product3.jpg',
+            'image' : this.props.image_url + 'product/product3.jpg',
             'title': 'Restourant'
         },
     ]
@@ -105,5 +106,9 @@ class Product extends Component
         )
     }
 }
-
-export default withStyles(styles, {withTheme: true}) (Product)
+const mapStatToProps = (state) => {
+    return {
+        image_url: state.image_url
+    }
+}
+export default  withStyles(styles, {withTheme: true}) (connect(mapStatToProps, null)(Product))
