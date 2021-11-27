@@ -1,5 +1,6 @@
 import {Button, Container, Grid, makeStyles, Typography } from "@material-ui/core";
 import React from "react";
+import { connect } from "react-redux";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -23,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
         paddingTop: theme.spacing(5)
     }
 }))
-const Banner = () => {
+const Banner = (props) => {
     const classes = useStyles()
     return (
         <div className={classes.root}>
@@ -62,7 +63,7 @@ const Banner = () => {
                     <Grid item lg={7}>
                         <img 
                             className={ classes.image }
-                            src="/assets/images/banner.png" 
+                            src={`${props.image_url}banner.png`} 
                             alt="" 
                         />
                     </Grid>
@@ -72,4 +73,9 @@ const Banner = () => {
     )
 }
 
-export default Banner
+const mapStatToProps = (state) => {
+    return {
+        image_url: state.image_url
+    }
+}
+export default connect(mapStatToProps, null) (Banner)
