@@ -7,9 +7,11 @@ import RightContent from "./RightContent/RightContent";
 const styles = theme => ({
     root: {
         [theme.breakpoints.down('sm')]: {
-            marginTop: theme.spacing(3),
+            // marginTop: theme.spacing(10),
+            marginBottom: theme.spacing(0)
         },
         marginTop: theme.spacing(10),
+        marginBottom: theme.spacing(20)
     },
 })
 
@@ -19,6 +21,7 @@ class Contact extends Component
         const { classes } = this.props;
         return (
             <Container
+                
                 className={classes.root}
             >
                 <Grid 

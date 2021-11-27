@@ -9,7 +9,7 @@ import Product from './pages/product/Product';
 function App() {
   return (
     <div className="App">
-      <Router>
+      <Router basename="/company-profile">
         <Layout>
           <Switch>
             <Route exact path="/" component={Home} />

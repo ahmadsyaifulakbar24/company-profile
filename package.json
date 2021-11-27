@@ -1,8 +1,8 @@
 {
   "name": "company-profile",
   "version": "0.1.0",
-  "homepage": "http://ahmadsyaifulakbar24.github.io/company-profile",
   "private": true,
+  "homepage": "http://ahmadsyaifulakbar24.github.io/company-profile",
   "dependencies": {
     "@material-ui/core": "^4.12.3",
     "@material-ui/icons": "^4.11.2",
